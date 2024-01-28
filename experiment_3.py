@@ -4,14 +4,14 @@ from difflib import SequenceMatcher
 import time
 
 # Set your OpenAI API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Load eSNLI dataset
 esnli_dataset_path = "esnli_train_1.csv"
-esnli_df = pd.read_csv(esnli_dataset_path).head(100)
+esnli_df = pd.read_csv(esnli_dataset_path).head(20)
 
 # Create a new DataFrame to store the results
-results_df = pd.DataFrame(columns=["pairID", "gold_Label", "ChatGPT_Explanation", "Similarity"])
+results_df = pd.DataFrame(columns=["pairID", "gold_Label", "esnli_Explanation", "ChatGPT_Predicted_Label", "ChatGPT_Explanation"])
 
 request_count = 0
 
@@ -69,13 +69,14 @@ def process_batch(batch_df, request_counter):
     return request_counter
 
 
-# Process the dataset in batches
-batch_size = 100  # Set the batch size as per your requirement
+batch_size = 20  # Set the batch size as per your requirement
+
+
 for start in range(0, len(esnli_df), batch_size):
     end = start + batch_size
     batch_df = esnli_df[start:end]
     process_batch(batch_df, request_count)
-    results_df.to_csv("intermediate_results.csv", index=False)  # Save intermediate results
+    results_df.to_csv("intermediate_results.csv", index=False)
 
 # Save the final results to a new CSV file
 results_df.to_csv("final_results.csv", index=False)
