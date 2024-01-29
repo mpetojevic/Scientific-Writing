@@ -73,5 +73,5 @@ for start in range(0, len(esnli_df), batch_size):
     results_df.to_csv("intermediate_results.csv", index=False)  # Save intermediate results
 
 # Save the final results to a new CSV file
-results_df.to_csv("final_results.csv", index=False)
+results_df.to_csv("PremiseAgnostics.csv", index=False)
 print("Results saved successfully.")

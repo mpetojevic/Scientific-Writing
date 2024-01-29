@@ -4,7 +4,7 @@ from difflib import SequenceMatcher
 import time
 
 # Set your OpenAI API key
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Load eSNLI dataset
 esnli_dataset_path = "esnli_train_1.csv"
@@ -69,7 +69,7 @@ def process_batch(batch_df, request_counter):
     return request_counter
 
 
-batch_size = 20  # Set the batch size as per your requirement
+batch_size = 20
 
 
 for start in range(0, len(esnli_df), batch_size):
@@ -78,6 +78,6 @@ for start in range(0, len(esnli_df), batch_size):
     process_batch(batch_df, request_count)
     results_df.to_csv("intermediate_results.csv", index=False)
 
-# Save the final results to a new CSV file
-results_df.to_csv("final_results.csv", index=False)
+
+results_df.to_csv("PredictAndExplain.csv", index=False)
 print("Results saved successfully.")
