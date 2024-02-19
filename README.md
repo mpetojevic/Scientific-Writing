@@ -8,5 +8,5 @@ imposed by the OpenAI API, offering a focused investigation into its NLI perform
 
 # Paper
 
-The paper can also be found in the repository, see **Enhancing Natural Language Understanding: A
-Practical Evaluation using e-SNLI and ChatGPT**
+The paper can also be found in the repository, see [**Enhancing Natural Language Understanding: A
+Practical Evaluation using e-SNLI and ChatGPT**](https://github.com/mpetojevic/Scientific-Writing/blob/main/Enhancing%20Natural%20Language%20Understanding%3A%20A%0APractical%20Evaluation%20using%20e-SNLI%20and%20ChatGPT.pdf)
