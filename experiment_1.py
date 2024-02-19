@@ -20,7 +20,7 @@ def process_batch(batch_df, request_counter):
     for index, row in batch_df.iterrows():
         # Prepare input for ChatGPT
         input_text = (
-            "Based on premise, hypothesis, \n"
+            "Based on premise and hypothesis, \n"
             "find the entailment label between them: entailment, contradiction or neutral."
             "Your answer must be one word only.\n"
             f"Premise: {row['Sentence1']} Hypothesis: {row['Sentence2']} \n"

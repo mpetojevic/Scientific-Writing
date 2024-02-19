@@ -20,7 +20,8 @@ def process_batch(batch_df, request_counter):
     for index, row in batch_df.iterrows():
         # Prepare input for ChatGPT
         input_text = (
-            "Based on premise, hypothesis, gold explanation and marked words in sentences provide an explanation.\n"
+            "Based on premise, hypothesis, gold explanation and marked words in sentences provide an explanation of the "
+            "relationship between two sentences.\n"
             "Explanation can be at most 1 sentence, should be short and precise, not repeating gold label, "
             "hypothesis or the premise. Your explanation mustn't mention marked words! You should just explain"
             "what situation could be going on based on the two sentences.\n"
